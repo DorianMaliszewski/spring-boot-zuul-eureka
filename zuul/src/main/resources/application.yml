@@ -1,0 +1,21 @@
+zuul:
+  prefix: /rest
+  routes:
+    hello-service:
+      path: /hello-service/**
+      serviceId: HELLO-SERVICE
+    post-service:
+      path: /post-service/**
+      serviceId: POST-SERVICE
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: zuul-service

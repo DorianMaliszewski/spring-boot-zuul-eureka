@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: post-service
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost/post_test
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+
+
+server:
+  port: 8082
