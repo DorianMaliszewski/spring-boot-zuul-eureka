@@ -1,11 +1,8 @@
-server:
-  port: 8081
-
 spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://localhost/hello_test
+    url: jdbc:mysql://db-hello/hello_test
   application:
     name: hello-service
 
@@ -13,10 +10,10 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8000/eureka
+      defaultZone: http://eureka:8761/eureka
   instance:
     prefer-ip-address: true
-    hostname: localhost
+    hostname: dorian.lan
 
 application:
   instance: 1

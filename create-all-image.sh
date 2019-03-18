@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ./eureka-server && ./mvnw package docker:build -DskipTests && cd ../hello-service && ./mvnw package docker:build -DskipTests && cd ../post-service && ./mvnw package docker:build -DskipTests && cd ../zuul && ./mvnw package docker:build -DskipTests && cd ../

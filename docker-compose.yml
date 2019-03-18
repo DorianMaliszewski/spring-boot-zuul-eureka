@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  eureka:
+    image: test-eureka
+    ports:
+      - 8081:8761
+
+  zuul:
+    image: test-zuul
+    ports:
+      - 8080:8080
+
+  db-hello:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_HELLO_DB}
+
+  db-post:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_POST_DB}
+
+  hello-service:
+    image: test-hello-service
+    depends_on:
+      - db-hello
+
+  post-service:
+    image: test-post-service
+    depends_on:
+      - db-post
