@@ -12,7 +12,7 @@
 ## Quick launch
 
 - `sh launch-stack.sh`, it will launch the stack with 4 instances of hello-service
-- Wait a little, zuul need to synchronized services in eureka (about 1 or 2 minutes)
+- Wait a little, zuul need to synchronize services with eureka (about 1 or 2 minutes)
 - Go to `http://localhost:8080/rest/hello-service/**` to access the hello service
 - Go to `http://localhost:8080/rest/post-service/**` to access the post service
 
